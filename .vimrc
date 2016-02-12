@@ -21,6 +21,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-fugitive' " Git Stuff
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'flazz/vim-colorschemes'
 
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
@@ -98,9 +99,22 @@ au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 " Set the default file encoding to UTF-8:
 set encoding=utf-8
 
+" Keep indentation level from previous line:
+autocmd FileType python set autoindent
+
+"----------Colors and themes--------------------
+
 " For full syntax highlighting:
 let python_highlight_all=1
 syntax on
 
-" Keep indentation level from previous line:
-autocmd FileType python set autoindent
+" Always dark mode!
+set background=dark
+
+" Enable italics for gruvbox
+let g:gruvbox_italic=1
+
+" COLOR SCHEME HERE
+colorscheme tayra
+
+
