@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'Valloric/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
@@ -115,6 +116,5 @@ set background=dark
 let g:gruvbox_italic=1
 
 " COLOR SCHEME HERE
-colorscheme tayra
-
+colorscheme gruvbox
 
