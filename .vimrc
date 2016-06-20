@@ -24,6 +24,10 @@ Plugin 'tpope/vim-fugitive' " Git Stuff
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'flazz/vim-colorschemes'
 
+" Javascript and Angular stuff
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
@@ -71,6 +75,12 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 
+
+"------------Javascript load libraries for syntax----------
+" autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+" autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
+let g:used_javascript_libs = 'underscore,angularjs'
+
 "------------Start Python PEP 8 stuff----------------
 " For Python files
 au BufNewFile,BufRead *.py
@@ -83,10 +93,12 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
 
 " For non python files
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.js,*.html,*.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set autoindent |
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
