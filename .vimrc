@@ -1,12 +1,15 @@
 set nocompatible              " required
 filetype off                  " required
+filetype plugin on
+
+" ----------------------- Vundle Setup ------------------------------------
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -23,17 +26,33 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-fugitive' " Git Stuff
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Javascript and Angular stuff
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
-
-
-" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+Plugin 'KabbAmine/gulp-vim'
+Plugin 'groenewege/vim-less'
+Plugin 'skammer/vim-css-color'
 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
+" -------------------------- End of Vundle Setup -------------------------
+
+" -------------------------- Vim Plug Setup ------------------------------
+
+call plug#begin()
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+" -------------------------- End of Vim Plug Setup -----------------------
+
 filetype plugin indent on    " required
 
 " Autocompletion
@@ -75,6 +94,12 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 
+" Set fonts
+if has("gui_running")
+    if has("gui_win32")
+	set guifont=Bitstream\ Vera\ Sans\ Mono:h10
+    endif
+endif
 
 "------------Javascript load libraries for syntax----------
 " autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
@@ -128,5 +153,8 @@ set background=dark
 let g:gruvbox_italic=1
 
 " COLOR SCHEME HERE
-colorscheme gruvbox
+colorscheme solarized
 
+" Some Windows GUI specific fixes
+" backspace does not work on win gui
+set backspace=indent,eol,start
