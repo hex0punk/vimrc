@@ -36,9 +36,11 @@ Plugin 'KabbAmine/gulp-vim'
 Plugin 'groenewege/vim-less'
 Plugin 'skammer/vim-css-color'
 
+" Regular text file highlighting for taking notes
+Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call vundle#end('~/.vim/plugged')            " required
 
 " -------------------------- End of Vundle Setup -------------------------
 
@@ -155,6 +157,9 @@ let g:gruvbox_italic=1
 " COLOR SCHEME HERE
 colorscheme solarized
 
+" ---------- For Windows -------------
 " Some Windows GUI specific fixes
 " backspace does not work on win gui
 set backspace=indent,eol,start
+
+" ---------- For Mac ---------------
