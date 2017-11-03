@@ -50,7 +50,7 @@ call plug#begin()
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim'
-
+Plug 'fatih/vim-go'
 call plug#end()
 
 " -------------------------- End of Vim Plug Setup -----------------------
@@ -155,7 +155,7 @@ set background=dark
 let g:gruvbox_italic=1
 
 " COLOR SCHEME HERE
-colorscheme solarized
+colorscheme gruvbox 
 
 " ---------- For Windows -------------
 " Some Windows GUI specific fixes
