@@ -24,7 +24,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-fugitive' " Git Stuff
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -51,6 +50,7 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
+Plug 'EdenEast/nightfox.nvim' 
 call plug#end()
 
 " -------------------------- End of Vim Plug Setup -----------------------
@@ -69,19 +69,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 "turn on numbering
 set nu
-
-" Python with virtualenv support
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUA_ENV' in os.environ:
-	project_base_dir = os.environ['VIRTUAL_ENV']
-	sys.path.insert(0, project_base_dir)
-	activate_this = os.path.join(project_base_dir,'bin/activate_this.py')
-	execfile(activate_this, dict(__file__=activate_this))
-EOF
-
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -155,7 +142,7 @@ set background=dark
 let g:gruvbox_italic=1
 
 " COLOR SCHEME HERE
-colorscheme gruvbox 
+colorscheme nightfox 
 
 " ---------- For Windows -------------
 " Some Windows GUI specific fixes
